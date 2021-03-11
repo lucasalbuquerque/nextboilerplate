@@ -3,9 +3,15 @@
         "browser": true,
         "es2021": true
     },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
     ],
     "parser": "@typescript-eslint/parser",
@@ -18,8 +24,14 @@
     },
     "plugins": [
         "react",
+        "react-hooks",
         "@typescript-eslint"
     ],
     "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/prop-types": "off", //unable proptypes rule because we are using typescript
+      "react/react-in-jsx-scope": "off", //remove required react import into all files
+      "@typescript-eslint/explicit-module-boundary-types": "off" //remove inference
     }
 }

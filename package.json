@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:production": "NODE_ENV=production next build",
+    "build:production": "cross-env NODE_ENV=production next build",
     "start": "next start",
     "lint": "eslint src --max-warnings=0",
     "prepare": "husky install",
@@ -21,6 +21,7 @@
     ]
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "jest-styled-components": "^7.0.3",
     "next": "10.0.8",
     "next-pwa": "^5.0.6",
